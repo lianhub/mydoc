@@ -1,0 +1,17 @@
+language: php
+php:
+- 7.0
+env:
+  matrix:
+  - "..."
+  global:
+  - GIT_NAME: "'Jerry auto deploy'"
+  - GIT_EMAIL: jerry@mydocfake.com
+  - GH_REF: github.com/lianhub/mydoc
+  - secure: kqOd/Uf13XdGI7USYEsyjC+53F48X4V2T8KU2tXnKuV2VH35Xpa+v14g01U3OtOPv66F39J/ZQ3FMj2H0UOhdw4Us4JpZoadLcmGMEkg4LxfWQHBnjHjUPV8KenuZ4SkpiuoC7uifhIjO5MaT4S6phS3lmxzJAC+O/5HknuYD19Ydq22e1Ged3SBUWCld0Vt3jsfd95juaal3AOY7YgrZmstBMe9GYQSga4R3gaFy87MEOYvHi8kULblyvoi0tDRgVUierhcIN5yyd+eXZBNETlp+dQYcrP3GEnfaqvGDa4TGRd3EZnGrWwcCTFLmVFoxknbOelXqfEV6eEOcy7U7IXFnK920EAj9TZfh/EcTya9P0TPSMbm5xnhUnAex64R3nlxqT4PNmm/vJ6werCfTSSwYZw3i17Gvw9zgwjUO3ZiUBojNcm8YM0XUW1wwrZzDMAtghPpHKmr0jhtJsh9Y1YOjnf6De2IIApfNBXJlBlkq8prIQcLIq2vuPuo09HDuC1C0yVpMRJbMDMrvkPm4RVBHAYI3G84yTgno3DIvMZuzapSXPp6iEvaVN4fDWXUj0XJHbF0LKDImQjfGTsX5beQAcEVTULnqhuUtacV2MwmJozqBZMuctN0vGCU0FEHHtOfg1AP60Zh7Ey8PSpX5mmhRnicVWYu4YNGhpGPERI=
+
+before_script:
+- composer install --no-progress
+
+script:
+- vendor/bin/couscous travis-auto-deploy --php-version=7.0
